@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Style */
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        /* Navigation Bar Styles */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #222;
+            padding: 1rem 0;
+            transition: background-color 0.3s;
+            z-index: 1000;
+        }
+
+        nav.scrolled {
+            background-color: #444;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 5px 15px;
+            transition: color 0.3s, background-color 0.3s, transform 0.3s;
+        }
+
+        /* Hover Effect */
+        nav ul li a:hover {
+            color: #4caf50;
+            background-color: #333;
+            border-radius: 4px;
+            transform: scale(1.1);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 20px 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #3a9c3d;
+            transform: translateY(-3px);
+        }
+
+        .content {
+            margin-top: 100px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav id="navbar">
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Main Content -->
+<div class="content" id="home">
+    <h1>Welcome to Our Interactive Page</h1>
+    <p>This page features a navigation menu that changes style when you scroll or hover over it. Additionally, buttons below demonstrate the interactive style.</p>
+    <button class="btn">Return</button>
+    <button class="btn">Submit</button>
+</div>
+
+<div class="content" id="about">
+    <h1>About Us</h1>
+    <p>We are committed to providing the best services in the industry with attention to detail and customer satisfaction as our main goals.</p>
+</div>
+
+<div class="content" id="services">
+    <h1>Our Services</h1>
+    <p>From web development to app development, we offer a wide range of services to cater to all your digital needs.</p>
+</div>
+
+<div class="content" id="contact">
+    <h1>Contact Us</h1>
+    <p>Have any questions? Feel free to reach out through our contact page for more information!</p>
+</div>
+
+<!-- JavaScript for Scroll Effect -->
+<script>
+    window.addEventListener("scroll", function() {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+    });
+</script>
+
+</body>
+</html>
